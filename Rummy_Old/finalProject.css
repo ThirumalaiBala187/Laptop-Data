@@ -1,0 +1,183 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: sans-serif;
+    font-weight: bold;
+    text-align: center;
+    overflow-x: hidden;
+}
+
+.flex{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.gameTableBg{
+    height: 100vh;
+    width: 100vw;
+    background-image: url(RummyCards/rummyCardTable.jpeg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    flex-direction: column;
+    position: relative;
+}
+
+.leaveMatch{
+    height: 100px;
+    width: 100px;
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    transform: scaleX(-1);
+}
+
+.elephant{
+    position: absolute;
+    height: 400px;
+    width: 250px;
+    top: 270px;
+    left: 5px;
+}
+
+.elephant1{
+    position: absolute;
+    height: 400px;
+    width: 250px;
+    top: 270px;
+    right: 5px;
+    transform: scaleX(-1);
+}
+
+.help{
+    height: 150px;
+    width: 150px;
+    position: absolute;
+    top: 15px;
+    right: 35px;
+}
+
+.centerShuffleBox{
+    height: 230px;
+    width: 65%;
+    /* background-color: red; */
+    margin-top: 5%;
+    padding: 0% 5% 0% 5%;
+}
+
+.cardInner{
+    height: 100%;
+    width: 14.5%;
+    border: 3px solid black;
+    /* background-color: aliceblue; */
+    border-radius: 10px;
+    font-size: 30px;
+    color: aliceblue;
+    font-style: italic;
+    justify-content: center;
+
+}
+
+.cardSize{
+    height: 230px;
+    width: 150px;
+    position: absolute;
+    border-radius: 10px;
+    box-shadow: -5px -5px 5px black;
+    border: 2px solid black;
+    z-index: 10;
+}
+
+.cardSize.dragging{
+    z-index: 100;
+}
+
+.start{
+    height: 7.5%;
+    width: 10%;
+    background-color: aqua;
+    border: 2px solid black;
+    border-radius: 10px;
+    font-size: 30px;
+    margin-bottom: 6%;
+    /* margin-top: 20%; */
+}
+
+.playersArea{
+    height:270px;
+    width:65%;
+    /* background-color: aliceblue; */
+    font-size: 45px;
+    color: aliceblue;
+    justify-content: flex-start;
+}
+
+.playersImages{
+    height:220px;
+    width:40%;
+    padding-bottom: 5px;
+    /* background-color: aliceblue; */
+
+}
+
+.playerLogo{
+    height:100%;
+    width: 27%;
+    border-radius: 50%;
+    /* background-color: aliceblue; */
+    border: 10px solid rgb(88, 122, 190);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.turn{
+    height: 6%;
+    width: 30%;
+    /* background-color: black; */
+    position: absolute;
+    top: 285px;
+    font-size: 35px;
+    font-family: sans-serif;
+    color: azure;
+}
+
+.groupAndSortButton{
+    height:37%;
+    width:27%;
+    border-radius: 20px;
+    font-size: 30px;
+    color:red;
+    align-self: flex-end;
+    background-color: orange;
+}
+
+.dropButton{
+    position: absolute;
+    bottom: 10px;
+    right: 20px;
+    height:6.5%;
+    width:11%;
+    border-radius: 20px;
+    font-size: 30px;
+    color:azure;
+    justify-self: flex-end;
+    background-color: red;
+}
+
+
+.suitsToSort{
+    height:84%;
+    border-radius: 10px;
+    justify-content: flex-start;
+     border: 3px solid aliceblue;
+    /* background-color: aliceblue; */
+
+}
+
+
+.dragging{
+    filter: opacity(10%);
+    background-color: red;
+    height: 400px;
+}
