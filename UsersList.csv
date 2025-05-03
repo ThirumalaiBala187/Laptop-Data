@@ -1,0 +1,7 @@
+Name,Age,Gender,UserName,Password,Role,Like Products,Ordered Products,Cart,Address,Mobile Number
+Thirumalai,18,Male,balaprince187,bala@2627,Admin, , , 
+Prabhu,23,Male,prabhu@bharanicandles123,prabhu@1234,Admin, , , 
+Ragavan,19,Male,Ragav187,prncragav@2006,Customer,*-1006,*-1006-1006,*, ,0,
+Raamanujam,18,Male,Hariram123,hram@2026,Customer,*-1300-1003-1037-1153,*-1006-1007-1241-1241-1003-1037-1077-1037-1037-1002-1311-1311-1303,*-1288-1241-1002,sabhd,1234567890,
+Mathimithra,26,xxdfghjkl,iuytrewaertyuiopiufdszxfghjkl,M@thi,M@thi12622,Customer,*-1001,*,*,0,
+sts,21,Female,sts@gmail.com,sts,Customer,*,*-1311,*,,1234554321,
