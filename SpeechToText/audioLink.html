@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Speech to Text</title>
+</head>
+
+<body>
+    <button id="start">Start Transcription</button>
+    <p><strong>Transcription:</strong></p>
+    <p id="transcript">Waiting for transcription...</p>
+
+    <script>
+
+        const API_KEY = "3896ab0e7e50980788cf3bb4d9a539f876745387"; // Replace with your actual Deepgram key
+        const transcriptDisplay = document.getElementById("transcript");
+
+        async function transcribeFromURL() {
+            try {
+                const response = await fetch("https://api.deepgram.com/v1/listen", {
+                    method: "POST",
+                    headers: {
+                        "Authorization": `Token ${API_KEY}`,
+                        "Content-Type": "application/json"
+                    },
+                    body: JSON.stringify({
+                        url: "https://www.learningcontainer.com/wp-content/uploads/2020/02/SampleAudio_0.4mb.mp3"
+                    })
+
+                });
+
+                const result = await response.json();
+
+                // Check if transcription exists
+                if (result.results && result.results.channels) {
+                    transcriptDisplay.innerText = result.results.channels[0].alternatives[0].transcript || "No speech detected.";
+                } else {
+                    transcriptDisplay.innerText = "Error: No valid response from Deepgram.";
+                    console.error("Deepgram Error Response:", result);
+                }
+            } catch (error) {
+                transcriptDisplay.innerText = "Error processing the request.";
+                console.error("Fetch Error:", error);
+            }
+        }
+
+        // Call function when button is clicked
+        document.getElementById("start").addEventListener("click", transcribeFromURL);
+
+
+
+    </script>
+</body>
+
+</html>

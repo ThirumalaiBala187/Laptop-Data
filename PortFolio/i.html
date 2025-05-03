@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mail Hover Effect</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+        .mail-container {
+            position: relative;
+            width: 200px;
+            height: 80px;
+            background: #333;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            border-radius: 10px;
+            cursor: pointer;
+            overflow: hidden;
+        }
+        .hover-effect {
+            position: absolute;
+            width: 0;
+            height: 0;
+            background: #ff4500;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            border-radius: 10px;
+            opacity: 0;
+            transition: width 0.4s ease-in-out, height 0.4s ease-in-out, opacity 0.2s ease-in-out 0.2s;
+        }
+        .mail-container:hover .hover-effect {
+            width: 100%;
+            height: 100%;
+            opacity: 1;
+        }
+        .mail-container span {
+            transition: opacity 0.2s ease-in-out;
+        }
+        .mail-container:hover span {
+            opacity: 0;
+        }
+    </style>
+</head>
+<body>
+
+<div class="mail-container">
+    <span>Mail</span>
+    <div class="hover-effect">leo@example.com</div>
+</div>
+
+</body>
+</html>

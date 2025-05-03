@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Deepgram TTS with Fetch</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      background-color: rgba(0, 0, 0, 0.705);
+    }
+    button {
+      padding: 15px 30px;
+      font-size: 18px;
+      background-color: #007bff;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #0056b3;
+    }
+  </style>
+</head>
+<body>
+  <button onclick="generateSpeech()">Generate and Play Speech</button>
+  
+  <script>
+    const API_KEY = "91d45ad7ea54348740101f79753ee84d4557def5";
+    const url = "https://api.deepgram.com/v1/speak?model=aura-asteria-en&encoding=mp3";
+    const text = "Hello, this is a test using Deepgram's TTS API with fetch!";
+    const requestBody = {
+      text: text,
+    };
+
+    const headers = {
+      "Authorization": `Token ${API_KEY}`,
+      "Content-Type": "application/json",
+    };
+
+    async function generateSpeech() {
+      try {
+        const response = await fetch(url, {
+          method: "POST",
+          headers: headers,
+          body: JSON.stringify(requestBody),
+        });
+        if (!response.ok) {
+          throw new Error(`HTTP error! Status: ${response.status}`);
+        }
+        const audioBlob = await response.blob();
+
+        const audioUrl = URL.createObjectURL(audioBlob);
+
+        const audio = new Audio(audioUrl);
+        audio.play();
+
+        console.log("Audio is playing!");
+      } catch (error) {
+        console.error("Error generating speech:", error);
+        alert("Failed to generate speech. Check console for details.");
+      }
+    }
+  </script>
+</body>
+</html>

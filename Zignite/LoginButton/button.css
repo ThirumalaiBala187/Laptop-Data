@@ -1,0 +1,90 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 100px;
+}
+
+.loginButton {
+    height: 200px;
+    width: 150px;
+}
+
+.bt {
+    height: 100%;
+    width: 100%;
+    cursor: pointer;
+    outline: none;
+    border: none;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    background: none;
+}
+
+.lightHolder {
+    height: 200px;
+    width: 100px;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.dot {
+    position: absolute;
+    height: 10px;
+    width: 10px;
+    border-radius: 50%;
+    background-color: black;
+    z-index: 1;
+}
+
+.light {
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    clip-path: polygon(50% 0%, 25% 100%, 75% 100%);
+}
+
+
+.buttonHolder {
+    height: 100px;
+    width: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    background-color: #0a0a0a;
+    color: #0f0f0f;
+    font-weight: 700;
+    transition: 300ms;
+    outline: 4px solid #0f0f0f;
+    outline-offset: 2px;
+}
+
+.buttonHolder svg {
+    height: 60px;
+    fill: #0f0f0f;
+    transition: 300ms;
+}
+
+.bt:hover .buttonHolder svg {
+    fill: rgba(88, 101, 242, 1);
+}
+
+.bt:hover .buttonHolder {
+    color: rgba(88, 101, 242, 1);
+    outline: 4px solid rgba(88, 101, 242, 1);
+}
+
+.bt:hover .light {
+    background: linear-gradient(180deg, rgba(88, 101, 242, 1) 0%,rgba(255, 255, 255, 0) 75%, rgba(255, 255, 255, 0) 100%);
+}

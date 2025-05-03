@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Audio Recorder with Deepgram</title>
+</head>
+<body>
+    <button id="startRecording">Start Recording</button>
+    <button id="stopRecording" disabled>Stop Recording</button>
+    <audio id="audioPlayback" controls></audio>
+    <div id="transcript"></div>
+
+    <script>
+        let mediaRecorder;
+        let audioChunks = [];
+        const startBtn = document.getElementById('startRecording');
+        const stopBtn = document.getElementById('stopRecording');
+        const audioPlayback = document.getElementById('audioPlayback');
+        const transcriptDiv = document.getElementById('transcript');
+        startBtn.addEventListener('click', async () => {
+            try {
+                const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
+                mediaRecorder = new MediaRecorder(stream);
+                
+                mediaRecorder.ondataavailable = (event) => {
+                    audioChunks.push(event.data);
+                };
+
+                mediaRecorder.onstop = handleRecordingStop;
+
+                audioChunks = [];
+                mediaRecorder.start();
+                
+                startBtn.disabled = true;
+                stopBtn.disabled = false;
+            } catch (error) {
+                console.error('Error accessing microphone:', error);
+            }
+        });
+        stopBtn.addEventListener('click', () => {
+            mediaRecorder.stop();
+            mediaRecorder.stream.getTracks().forEach(track => track.stop());
+            
+            startBtn.disabled = false;
+            stopBtn.disabled = true;
+        });
+
+        async function handleRecordingStop() {
+            const audioBlob = new Blob(audioChunks, { type: 'audio/webm' });
+            const audioUrl = URL.createObjectURL(audioBlob);
+            audioPlayback.src = audioUrl;
+            try {
+                const transcript = await transcribeAudio(audioBlob);
+                transcriptDiv.textContent = transcript;
+            } catch (error) {
+                console.error('Transcription error:', error);
+                transcriptDiv.textContent = 'Error transcribing audio';
+            }
+        }
+
+        async function transcribeAudio(audioBlob) {
+            const DEEPGRAM_API_KEY = '13871c1934a004a2b8d91f8ef1735d6bb7437f7f';
+            
+            const response = await fetch('https://api.deepgram.com/v1/listen', {
+                method: 'POST',
+                headers: {
+                    'Authorization': `Token ${DEEPGRAM_API_KEY}`,
+                    'Content-Type': 'audio/webm'
+                },
+                body: audioBlob
+            });
+
+            if (!response.ok) {
+                throw new Error(`Deepgram API error: ${response.status}`);
+            }
+
+            const data = await response.json();
+            return data.results.channels[0].alternatives[0].transcript;
+        }
+    </script>
+</body>
+</html>
