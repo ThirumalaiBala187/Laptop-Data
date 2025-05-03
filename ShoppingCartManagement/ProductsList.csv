@@ -1,0 +1,311 @@
+Product ID,Product Name,Brand,Category,Product Type,Price,Available Quantity,Discount,No.of.Likes,Quantity Sold
+1001,LG 65-Inch 4K OLED TV,LG,Electronics,TV,124712,6,7.0,0,0
+1002,Samsung 65-Inch QLED Smart TV,Samsung,Electronics,TV,99717,5,12.0,0,0
+1003,Apple iPhone16 Pro Titanium,Apple,Electronics,Smartphones,98236,16,6.0,0,0
+1004,Samsung Galaxy S23,Samsung,Electronics,Smartphones,107617,19,5.0,0,0
+1005,Oneplus 11 5G,Oneplus,Electronics,Smartphones,64999,19,10.0,0,0
+1006,Whirlpool 240L Double-Door Refrigerator,Whirlpool,Electronics,Fridge,26499,5,12.0,0,0
+1007,LG 190L Single-Door Refrigerator,LG,Electronics,Fridge,19999,7,10.0,0,0
+1008,Samsung Washing Machine,Samsung,Electronics,Washing Machine,33699,9,5.0,0,0
+1009,Whirlpool Washing Machine,Whirlpool,Electronics,Washing Machine,19449,6,8.0,0,0
+1010,LG Dishwasher,LG,Electronics,Dishwasher,17349,12,12.0,0,0
+1011,Haier Dishwasher,Haier,Electronics,Dishwasher,29899,14,7.0,0,0
+1012,Apple MacBook Air M2,Apple,Electronics,Laptops,114900,3,0.0,0,0
+1013,Dell Inspiron 15,Dell,Electronics,Laptops,62499,5,10.0,0,0
+1014,HP Pavilion x360,HP,Electronics,Laptops,72999,6,7.0,0,0
+1015,Bose QuietComfort 45,Bose,Electronics,Headphones,27360,20,7.5,0,0
+1016,Apple AirPods Pro (2nd Gen),Apple,Electronics,Headphones,26900,10,10.0,0,0
+1017,Sony WH-1000XM5 Noise Cancelling Headphones,Sony,Electronics,Headphones,29999,15,10.0,0,0
+1018,Samsung Galaxy Watch 6,Samsung,Electronics,Smartwatch,34999,10,12.0,0,0
+1019,Apple Watch Series 9,Apple,Electronics,Smartwatch,41900,8,8.0,0,0
+1020,Xiaomi Mi Smart Band 6,Xiaomi,Electronics,Smartwatch,3320,9,15.0,0,0
+1021,Canon EOS R50 Mirrorless Camera,Canon,Electronics,Camera,86999,10,10.0,0,0
+1022,Sony ZV-E10 Mirrorless Camera,Sony,Electronics,Camera,68999,7,7.0,0,0
+1023,GoPro HERO12 Action Camera,GoPro,Electronics,Camera,49500,8,5.0,0,0
+1024,Samsung Galaxy Tab S9,Samsung,Electronics,Tablets,79999,11,5.0,0,0
+1025,Apple iPad Air (10.9-inch),Apple,Electronics,Tablets,69900,8,10.0,0,0
+1026,Amazon Fire HD 10,Amazon,Electronics,Tablets,15999,6,15.0,0,0
+1027,LG 2.1 Channel Soundbar,LG,Electronics,Audio & Sound,14917,35,10.0,0,0
+1028,Epson EcoTank L3250 All-in-One Printer,Epson,Electronics,Printers,14999,20,8.0,0,0
+1029,HP LaserJet Pro MFP,HP,Electronics,Printers,21999,25,10.0,0,0
+1030,Canon PIXMA MG3070S,Canon,Electronics,Printers,6999,12,12.0,0,0
+1031,Sony PlayStation 5,Sony,Electronics,Gaming Consoles,53917,11,5.0,0,0
+1032,Philips Steam Iron,Philips,Electronics,Iron Box,3320,10,11.0,0,0
+1033,Preethi Zodiac Mixer Grinder,Preethi,Electronics,Kitchen Appliances,12367,9,12.0,0,0
+1034,Instant Vortex Plus Air Fryer,Instant,Electronics,Kitchen Appliances,11557,15,10.0,0,0
+1035,Cuisinart 14-Cup Food Processor,Cuisinart,Electronics,Kitchen Appliances,16832,11,12.0,0,0
+1036,KitchenAid Stand Mixer,KitchenAid,Electronics,Kitchen Appliances,35687,5,2.0,0,0
+1037,The Alchemist,HarperOne,Books,Fiction,1413,10,5.0,0,0
+1038,Man's Search for Meaning,Beacon Press,Books,Philosophy,914,5,11.0,0,0
+1039,The Night Circus,Vintage,Books,Fiction,399,10,20.0,0,0
+1040,It Ends with Us,Simon & Schuster,Books,Fiction,350,15,15.0,0,0
+1041,The Silent Patient,Celadon Books,Books,Mystery/Thriller,450,12,10.0,0,0
+1042,Gone Girl,Crown Publishing,Books,Mystery/Thriller,400,10,12.0,0,0
+1043,A Game of Thrones,Bantam Books,Books,Fantasy,599,13,10.0,0,0
+1044,The Hobbit,HarperCollins,Books,Fantasy,499,10,15.0,0,0
+1045,Atomic Habits,Penguin Random House,Books,Self-Help,550,15,0.0,0,0
+1046,The Power of Now,New World Library,Books,Self-Help,399,10,10.0,0,0
+1047,Meditations,Penguin Classics,Books,Philosophy,299,5,5.0,0,0
+1048,The Republic,Hackett Publishing,Books,Philosophy,350,10,10.0,0,0
+1049,Steve Jobs,Simon & Schuster,Books,Biography/Autobiography,799,15,8.0,0,0
+1050,Becoming,Crown Publishing,Books,Biography/Autobiography,599,10,15.0,0,0
+1051,The Gruffalo,Macmillan Children's Books,Books,Kids,250,8,10.0,0,0
+1052,Harry Potter and the Sorcerer's Stone,Bloomsbury,Books,Kids,450,7,10.0,0,0
+1053,Sapiens: A Brief History of Humankind,Penguin Random House,Books,Kids,599,10,0.0,0,0
+1054,Tefal Non-Stick Fry Pan,Tefal,Home and Kitchen,Cookware,1599,5,15.0,0,0
+1055,Prestige Induction Cooker,Prestige,Home and Kitchen,Cookware,5999,10,20.0,0,0
+1056,Philips Induction Stove,Philips,Home and Kitchen,Cookware,5999,10,20.0,0,0
+1057,Milton Airtight Storage Containers (Set of 10),Milton,Home and Kitchen,Kitchen Storage,799,8,12.0,0,0
+1058,Amazon Bamboo Drawer Organizer,AmazonBasics,Home and Kitchen,Kitchen Storage,1199,10,10.0,0,0
+1059,IKEA Spice Rack,IKEA,Home and Kitchen,Kitchen Storage,999,5,8.0,0,0
+1060,Philips 600W Hand Blender,Philips,Home and Kitchen,Appliances,1799,10,10.0,0,0
+1061,Bajaj 3-in-1 Electric Griller,Bajaj,Home and Kitchen,Appliances,2799,15,15.0,0,0
+1062,Cello 1.7L Electric Kettle,Cello,Home and Kitchen,Appliances,899,7,5.0,0,0
+1063,Philips Air Fryer,Philips,Home and Kitchen,Appliances,6499,8,20.0,0,0
+1064,Bosch Food Processor,Bosch,Home and Kitchen,Small Appliances,7499,6,12.0,0,0
+1065,Black+Decker Coffee Maker,Black+Decker,Home and Kitchen,Small Appliances,2199,10,10.0,0,0
+1066,Amazon Wooden Storage Cabinet,Amazon Basics,Home and Kitchen,Furniture,3299,15,10.0,0,0
+1067,Seville Classics 3-Tier Rolling Cart,Seville Classics,Home and Kitchen,Furniture,2799,10,12.0,0,0
+1068,Urban Ladder Office Chair,Urban Ladder,Home and Kitchen,Furniture,7499,12,15.0,0,0
+1069,Amazon Microfiber Bed Sheet Set (King Size),AmazonBasics,Home and Kitchen,Bedding,1199,10,8.0,0,0
+1070,Wakefit Memory Foam Pillow,Wakefit,Home and Kitchen,Bedding,999,15,10.0,0,0
+1071,Wipro LED Ceiling Light,Wipro,Home and Kitchen,Lighting,1499,12,12.0,0,0
+1072,Philips Hue Table Lamp,Philips Hue,Home and Kitchen,Lighting,3199,8,15.0,0,0
+1073,Long Cylindrical Candles,Bharani Candles,Home and Kitchen,Candles,199,40,5.0,0,0
+1074,Designer Cup Candles,Bharani Candles,Home and Kitchen,Candles,399,30,7.0,0,0
+1075,Godrej Decorative Wall Mirror,Godrej Interio,Home and Kitchen,Decor,2495,10,10.0,0,0
+1076,Godrej Decorative Wall Mirror,Godrej Interio,Home and Kitchen,Decor,2495,10,10.0,0,0
+1077,Cotton Casual Shirt,Peter England,Fashion,Men's Clothing,1199,25,20.0,0,0
+1078,Slim Fit Denim Jeans,Levi's,Fashion,Men's Clothing,2499,20,25.0,0,0
+1079,Round Neck Graphic T-Shirt,Puma,Fashion,Men's Clothing,999,15,15.0,0,0
+1080,A-Line Maxi Dress,FabAlley,Fashion,Women's Clothing,1799,20,10.0,0,0
+1081,High-Waist Skinny Jeans,H&M,Fashion,Women's Clothing,1999,10,15.0,0,0
+1082,Chiffon Floral Scarf,Zara,Fashion,Women's Clothing,699,12,8.0,0,0
+1083,Boys' Cotton Polo T-Shirt,U.S. Polo Assn.,Fashion,Kid's Clothing,899,10,12.0,0,0
+1084,Girls' Party Wear,Max,Fashion,Kid's Clothing,1499,14,10.0,0,0
+1085,Unisex Hooded Sweatshirt,TRENDS,Fashion,Kid's Clothing,1199,15,20.0,0,0
+1086,Running Shoes,Nike,Fashion,Men's Footwear,4299,30,15.0,0,0
+1087,Leather Formal Shoes,Bata,Fashion,Men's Footwear,2499,35,10.0,0,0
+1088,Casual Loafers,Woodland,Fashion,Men's Footwear,3199,27,12.0,0,0
+1089,Ballet Flats,Bata,Fashion,Women's Footwear,999,25,8.0,0,0
+1090,Heeled Sandals,Catwalk,Fashion,Women's Footwear,2199,20,15.0,0,0
+1091,Sneakers,Skechers,Fashion,Women's Footwear,3499,43,20.0,0,0
+1092,Chronograph Watch,Fossil,Fashion,Men's Watches,8999,13,10.0,0,0
+1093,Digutal Watch,Casio,Fashion,Men's Watches,6499,15,12.0,0,0
+1094,Rose Gold Analog Watch,Titan Raga,Fashion,Women's Watches,5799,17,15.0,0,0
+1095,Bracelet Watch,Michael Kors,Fashion,Women's Watches,12999,15,10.0,0,0
+1096,Leather Wallet,Tommy Hilfiger,Fashion,Men's Accessories,2199,35,8.0,0,0
+1097,Aviator Sunglasses,Ray-Ban,Fashion,Men's Accessories,6999,25,20.0,0,0
+1098,Tote Bag,Lavie,Fashion,Women's Accessories,2899,25,15.0,0,0
+1099,Designer Clutch,Hidesign,Fashion,Women's Accessories,4999,30,10.0,0,0
+1100,Kurta Set,Manyavar,Fashion,Men's Ethnic Wear,3999,20,20.0,0,0
+1101,Cotton Nehru Jacket,FabIndia,Fashion,Men's Ethnic Wear,2999,17,10.0,0,0
+1102,Embroidered Anarkali Suit,Biba,Fashion,Women's Ethnic Wear,5499,22,15.0,0,0
+1103,Printed Saree with Blouse,Sabyasachi,Fashion,Women's Ethnic Wear,8999,15,10.0,0,0
+1104,Leather Backpack,Wildcraft,Fashion,Bags,3199,45,15.0,0,0
+1105,Waterproof Hiking Backpack,American Tourister,Fashion,Bags,6999,32,20.0,0,0
+1106,Travel & Trekking Backpack,Skybags,Fashion,Bags,2299,24,10.0,0,0
+1107,Maybelline Liquid Foundation,Maybelline,Cosmetics,Face Makeup,599,27,10.0,0,0
+1108,Lakme Compact Powder,Lakme,Cosmetics,Face Makeup,299,25,8.0,0,0
+1109,Sugar Contour & Highlighter Palette,Sugar Cosmetics,Cosmetics,Face Makeup,849,20,12.0,0,0
+1110,Loreal Waterproof Eyeliner,Loreal Paris,Cosmetics,Eye Makeup,699,23,15.0,0,0
+1111,Maybelline Volumizing Mascara,Maybelline,Cosmetics,Eye Makeup,499,15,10.0,0,0
+1112,Huda Eyeshadow Palette (All Shades),Huda Beauty,Cosmetics,Eye Makeup,2199,20,5.0,0,0
+1113,MAC Matte Lipstick,MAC,Cosmetics,Lip Makeup,1699,22,8.0,0,0
+1114,Nykaa Liquid Lipstick,Nykaa,Cosmetics,Lip Makeup,599,35,10.0,0,0
+1115,Nivea Lip Balm,Nivea,Cosmetics,Lip Makeup,199,28,15.0,0,0
+1116,Luxury Perfume (100ml),Chanel,Cosmetics,Perfume,29999,10,15.0,0,0
+1117,Colorbar Nail Polish Set (Glossy Finish),Colorbar,Cosmetics,Nail Products,499,26,10.0,0,0
+1118,OPI Gel Nail Polish Remover,OPI,Cosmetics,Nail Products,999,22,8.0,0,0
+1119,Garnier BB Cream,Garnier,Cosmetics,Skin Care,349,20,10.0,0,0
+1120,Smashbox Primer,Smashbox,Cosmetics,Skin Care,3299,30,5.0,0,0
+1121,Loreal Hair Serum,Loreal Paris,Cosmetics,Hair Styling,999,27,15.0,0,0
+1122,Schwarzkopf Styling Hair Spray,Schwarzkopf,Cosmetics,Hair Styling,1299,32,10.0,0,0
+1123,Gatsby Strong Hold Hair Gel,Gatsby,Cosmetics,Hair Styling,399,45,10.0,0,0
+1124,Ustraa Matte Finish Hair Clay,Ustraa,Cosmetics,Hair Styling,499,43,12.0,0,0
+1125,OGX Curl Defining Mousse,OGX,Cosmetics,Hair Styling,1099,31,10.0,0,0
+1126,Livon Anti-Frizz Hair Cream,Livon,Cosmetics,Hair Care,599,27,15.0,0,0
+1127,Tresemme Heat Protection Spray,Tresemme,Cosmetics,Hair Care,1099,23,10.0,0,0
+1128,Dr.Trust Digital Thermometer,Dr.Trust,Health and Wealness,Medical Devices,5499,18,10.0,0,0
+1129,Omron BP Monitor,Omron,Health and Wealness,Medical Devices,2499,12,15.0,0,0
+1130,Beurer Pulse Oximeter,Beurer,Health and Wealness,Medical Devices,1599,5,20.0,0,0
+1131,GNC Multivitamin Gummies,GNC,Health and Wealness,Medical Devices,699,15,12.0,0,0
+1132,Muscle Blaze Protein Powder,Muscle Blaze,Health and Wealness,Medical Devices,2499,18,10.0,0,0
+1133,Amazon Yoga Mat,Amazon Basics,Health and Wealness,Medical Devices,999,13,15.0,0,0
+1134,Kore Dumbbell Set,Kore,Health and Wealness,Fitness Equipments,2499,5,8.0,0,0
+1135,Organic IndiaHerbal Tea,Organic India,Health and Wealness,Medical Devices,299,8,12.0,0,0
+1136,Dettol Hand Sanitizer,Dettol,Health and Wealness,Personal Care,199,5,10.0,0,0
+1137,3M Face Mask (Pack of 10),3M,Health and Wealness,Medical Devices,499,12,8.0,0,0
+1138,Savlon Disinfectant Spray,Savlon,Health and Wealness,Medical Devices,299,8,10.0,0,0
+1139,Caresmith Electric Massager,Caresmith,Health and Wealness,Pain Releif,2999,5,15.0,0,0
+1140,Dr.Physio Heating Pad,Dr.Physio,Health and Wealness,Pain Releif,1299,18,8.0,0,0
+1141,Morpheus Sleep Mask,Morpheus,Health and Wealness,Relaxation,299,10,5.0,0,0
+1142,Hot Wheels Track Builder,Hot Wheels,Toys and Games,Vehicle Toys,999,12,10.0,0,0
+1143,Barbie Dreamhouse Doll Set,Barbie,Toys and Games,Dolls,8999,18,20.0,0,0
+1144,NERF Elite Blaster,NERF,Toys and Games,Action Toys,1499,15,12.0,0,0
+1145,Hasbro Monopoly Classic Board Game,Hasbro,Toys and Games,Board Games,1199,5,10.0,0,0
+1146,Mattel UNO Card Game,Mattel,Toys and Games,Card Games,299,10,8.0,0,0
+1147,Rastar Remote Control Car,Rastar,Toys and Games,Remote-Controlled Toys,1599,12,15.0,0,0
+1148,Hamley's Teddy Bear,Hamleys,Toys and Games,Stuffed Toys,2499,18,10.0,0,0
+1149,Funskool Junior Doctor Kit,Funskool,Toys and Games,Role Play Toys,899,12,8.0,0,0
+1150,Rubik's Cube 3x3,Rubik's,Toys and Games,Puzzles,499,21,10.0,0,0
+1151,Funskool Chess Set,Funskool,Toys and Games,Board Games,699,5,8.0,0,0
+1152,Casio Musical Keyboard for Kids,Casio,Toys and Games,Musical Toys,2999,18,15.0,0,0
+1153,Yonex Badminton Racket Set,Yonex,Sports and Games,Badminton,1499,15,10.0,0,0
+1154,MRF Cricket Bat,MRF,Sports and Games,Cricket,2499,18,20.0,0,0
+1155,Adidas Football,Adidas,Sports and Games,Football,799,12,15.0,0,0
+1156,Wilson Tennis Racket,Wilson,Sports and Games,Tennis,2499,10,18.0,0,0
+1157,Nike Basketball,Nike,Sports and Games,Basketball,1799,18,10.0,0,0
+1158,Callaway Golf Club Set,Callaway,Sports and Games,Golf,19999,5,15.0,0,0
+1159,Strauss Skipping Rope,Strauss,Sports and Games,Fitness Equipment,199,10,10.0,0,0
+1160,Healthgenie Exercise Cycle,Healthgenie,Sports and Games,Fitness Equipment,5999,5,20.0,0,0
+1161,Stag Table Tennis Set,Stag,Sports and Games,Indoor Games,13999,10,15.0,0,0
+1162,Super Carrom Board,Super,Sports and Games,Indoor Games,1499,18,10.0,0,0
+1163,Hasbro Ludo Board Game,Hasbro,Sports and Games,Indoor Games,499,10,8.0,0,0
+1164,Funskool Snake and Ladder Game,Funskool,Sports and Games,Indoor Games,299,5,12.0,0,0
+1165,Nivia Badminton Net,Nivia,Sports and Games,Badminton,999,10,8.0,0,0
+1166,Cosco Volleyball Net,Cosco,Sports and Games,Volleyball,799,12,10.0,0,0
+1167,Toyshine Bowling Set,Toyshine,Sports and Games,Indoor Games,1299,15,12.0,0,0
+1168,Johnson's Baby Soap,Johnson's,Baby Products,Soap,199,15,12.0,0,0
+1169,Johnson's Baby Shampoo,Johnson's,Baby Products,Shampoo,199,15,12.0,0,0
+1170,Pampers Baby Diapers (Pack of 40),Pampers,Baby Products,Diapers,799,10,20.0,0,0
+1171,Huggies Baby Wipes (Pack of 72),Huggies,Baby Products,Wipes,299,12,15.0,0,0
+1172,Pigeon Baby Lotion,Pigeon,Baby Products,Lotion,299,8,10.0,0,0
+1173,Chicco Baby Carrier,Chicco,Baby Products,Carrier,2499,5,15.0,0,0
+1174,LuvLap Baby Walker,LuvLap,Baby Products,Wlaker,1299,15,18.0,0,0
+1175,Philips Baby Feeding Bottle,Philips Avent,Baby Products,Accessories,578,12,8.0,0,0
+1176,Babyhug Baby Clothes Set (5 Pcs),Babyhug,Baby Products,Clothing,999,5,20.0,0,0
+1177,Mothercare Baby Socks (Pack of 5),Mothercare,Baby Products,Clothing,299,31,10.0,0,0
+1178,Pigeon Baby Nail Clippers,Pigeon,Baby Products,Grooming,199,11,8.0,0,0
+1179,Curaprox Baby Toothbrush,Curaprox,Baby Products,Oral Care,249,27,5.0,0,0
+1180,Graco Baby Car Seat,Graco,Baby Products,Car Seat,6499,19,15.0,0,0
+1181,Wheat Flour (5kg),Aashirvaad,Groceries,Flour,229,15,20.0,0,0
+1182,Sugar (1kg),Aashirvaad,Groceries,Sweeteners,55,45,5.0,0,0
+1183,Salt (1kg),Tata,Groceries,Salt,18,50,8.0,0,0
+1184,Cooking Oil (L),Fortune,Groceries,Oils,185,40,15.0,0,0
+1185,Ghee (500g),Amul,Groceries,Ghee,229,30,5.0,0,0
+1186,Soya Sauce (250ml),Kikkoman,Groceries,Sauces,109,15,3.0,0,0
+1187,Tomato Ketchup (500g),Heinz,Groceries,Sauces,120,8,4.0,0,0
+1188,Chilli Powder (100g),Everest,Groceries,Spices,35,32,8.0,0,0
+1189,Turmeric Powder (100g),MDH,Groceries,Spices,45,30,6.0,0,0
+1190,Cumin Powder (100g),Tata Sampann,Groceries,Spices,55,25,0.0,0,0
+1191,Cardomom (50g),Tulsi,Groceries,Spices,95,15,4.0,0,0
+1192,Ginger-Garlic Paste (200g),Patanjali,Groceries,Pastes,50,20,0.0,0,0
+1193,Tamarind Paste (200g),Dabur,Groceries,Pastes,85,17,2.0,0,0
+1194,Toor Dal (1kg),Fortune,Groceries,Pulses,95,25,5.0,0,0
+1195,Moong Dal (1kg),Tata,Groceries,Pulses,110,25,3.0,0,0
+1196,Chana Dal (1kg),Aashirvaad,Groceries,Pulses,120,25,6.0,0,0
+1197,Dried Raisins (250g),Raisin Sun,Groceries,Dry Fruits,199,15,10.0,0,0
+1198,Cashews (200g),Kohinoor,Groceries,Dry Fruits,350,24,5.0,0,0
+1199,Almonds (200g),Sundrop,Groceries,Dry Fruits,299,20,10.0,0,0
+1200,Pistachios (200g),Nutraj,Groceries,Dry Fruits,399,18,8.0,0,0
+1201,Oats (1kg),Quaker,Groceries,Breakfast,149,15,3.0,0,0
+1202,Cornflakes (500g),Kellog's,Groceries,Breakfast,199,12,4.0,0,0
+1203,Toor Dal (1kg),Fortune,Groceries,Pulses,95,10,5.0,0,0
+1204,Honey (500g),Dabur,Groceries,Sweeteners,210,17,7.0,0,0
+1205,Peanut Butter (200g),Sundrop,Groceries,Snacks,125,25,10.0,0,0
+1206,Jam (200g),Kissan,Groceries,Snacks,85,30,5.0,0,0
+1207,Chili Sauce (250g),Ching's Secret,Groceries,Sauces,99,10,12.0,0,0
+1208,Mayonnaise (300g),Hellmann's,Groceries,Sauces,175,15,0.0,0,0
+1209,Green Peas (400g),Britannia,Groceries,Canned Foods,70,12,15.0,0,0
+1210,Coriander Powder (100g),MDH,Groceries,Spices,45,32,5.0,0,0
+1211,Chili Flakes (100g),Kashmir,Groceries,Spices,50,24,8.0,0,0
+1212,Black Pepper (100g),Everest,Groceries,Spices,60,29,12.0,0,0
+1213,Cumin Seeds (100g),Tata Sampann,Groceries,Spices,55,17,10.0,0,0
+1214,Mustard Seeds (100g),Tata Sampann,Groceries,Spices,45,15,2.0,0,0
+1215,Kashmiri Red Chili Powder (100g),MDH,Groceries,Spices,70,42,5.0,0,0
+1216,Basmati Rice (1kg),India Gate,Groceries,Rice,199,26,8.0,0,0
+1217,Tea Bags (100 count),Tata Tea,Groceries,Beverages,249,19,1.0,0,0
+1218,Instant Coffee (100g),Nescafe,Groceries,Beverages,195,22,7.0,0,0
+1219,Whole Wheat Pasta (500g),Barilla,Groceries,Pasta & Noodles,149,15,5.0,0,0
+1220,2-min Instant Noodles,Maggi,Groceries,Pasta & Noodles,70,25,7.0,0,0
+1221,Baking Sode (200g),Baking Time,Groceries,Baking,45,17,3.0,0,0
+1222,Pedigree Dog Food,Pedigree,Pet Supplies,Dog Food,299,10,0.0,0,0
+1223,Whiskas Cat Food,Pedigree,Pet Supplies,Cat Food,350,8,2.0,0,0
+1224,Himalaya Pet Shampoo,Himalaya,Pet Supplies,Pet Care,130,12,5.0,0,0
+1225,Trixie Dog Collar,Trixie,Pet Supplies,Dog Accessories,450,15,10.0,0,0
+1226,Dog Leash,PetSafe,Pet Supplies,Dog Accessories,599,34,10.0,0,0
+1227,Petmate Pet Bed,Petmate,Pet Supplies,Pet Bedding,899,41,18.0,0,0
+1228,Prevue Hendryx Bird Cage,Prevue Hendryx,Pet Supplies,Bird Care,1999,12,25.0,0,0
+1229,Aqua One Fish Tank,Aqua One,Pet Supplies,Fish Care,799,5,13.0,0,0
+1230,Midwest Rabbit Cage,Midwest,Pet Supplies,Animal Care,2499,10,18.0,0,0
+1231,Vision Parrot Cage,Vision,Pet Supplies,Bird Care,3499,7,25.0,0,0
+1232,Formula 1 Car Dashboard Cleaner,Formula 1,Automotive,Car Care,399,10,2.0,0,0
+1233,Meguiar's Car Wax,Meguiar's,Automotive,Car Care,899,17,0.0,0,0
+1234,Black+Decker Tyre Inflator,Black+Decker,Automotive,Car Accessories,1899,8,10.0,0,0
+1235,Autozone Car Seat Covers,Autozone,Automotive,Car Accessories,1499,15,18.0,0,0
+1236,Ambi Pur Car Air Freshener,Ambi Pur,Automotive,Car Accessories,299,10,12.0,0,0
+1237,Black+Decker Car Vacuum Cleaner,Black+Decker,Automotive,Car Care,2499,5,25.0,0,0
+1238,Ecoshine Car Sunshade,Ecoshine,Automotive,Car Accessories,699,8,10.0,0,0
+1239,Koolertron Car Seat Organizer,Koolertron,Automotive,Car Accessories,799,23,8.0,0,0
+1240,Castrol Car Engine Oil,Castrol,Automotive,Car Maintenance,599,60,5.0,0,0
+1241,Parker Fountain Pen,Parker,Stationery,Writing Instuments,599,40,12.0,0,0
+1242,Faber-Castell School Kit,Faber-Castell,Stationery,Writing Instuments,349,35,15.0,0,0
+1243,B2B A4 paper (500 Sheets),B2B,Stationery,Paper,250,55,12.0,0,0
+1244,Classmate Notebook (200 Pages),Classmate,Stationery,Notebooks,99,75,10.0,0,0
+1245,Post-it Sticky Notes (Pack of 5),Post-it,Stationery,Office Tools,175,43,14.0,0,0
+1246,Rorito Whiteboard Marker Set (4 Colors),Rorito,Stationery,Markers,350,25,7.0,0,0
+1247,Kangaroo Stapler,Kangaroo,Stationery,Office Tools,400,40,16.0,0,0
+1248,Nataraj Paper Clips (Pack of 100),Nataraj,Stationery,Paper Clips,50,32,10.0,0,0
+1249,Faber-Castell Scissors (8 Inches),Faber-Castell,Stationery,Office Tools,120,117,15.0,0,0
+1250,Q-Connect File Folders (Pack of 10),Q-Connect,Stationery,Office Tools,255,30,10.0,0,0
+1251,HP Printer Ink (Black),HP,Stationery,Printing,1200,20,18.0,0,0
+1252,Casio Calculator,Casio,Stationery,Office Tools,995,15,5.0,0,0
+1253,Rubbermaid Whiteboard (3x4 Feet),Rubbermaid,Stationery,Office Tools,2799,12,3.0,0,0
+1254,Fellowes Folders with Clip (Pack of 5),Fellowes,Stationery,Office Tools,299,25,0.0,0,0
+1255,Scotch Push Pins (Pack of 50),Scotch,Stationery,Office Tools,100,10,10.0,0,0
+1256,Camlin Envelope (Pack of 100),Camlin,Stationery,Envelopes,250,13,2.0,0,0
+1257,Stanley Paper Cutter,Stanley,Stationery,Office Tools,450,8,20.0,0,0
+1258,Stanley Hammer (16oz),Stanley,Tools,Hand Tools,399,10,16.0,0,0
+1259,Dewalt Screwdriver Set (6 Pcs),Dewalt,Tools,Hand Tools,599,8,3.0,0,0
+1260,Komelon Measuring Tape,Komelon,Tools,Measuring Tools,199,15,10.0,0,0
+1261,Bosch Electric Drill Machine,Bosch,Tools,Power Tools,2499,12,5.0,0,0
+1262,Stanley Utility Knife,Stanley,Tools,Hand Tools,150,100,5.0,0,0
+1263,Knipex Plier Set (4 Pcs),Knipex,Tools,Hand Tools,799,16,16.0,0,0
+1264,Stanley Toolbox (Large),Stanley,Tools,Storage Tools,999,25,4.0,0,0
+1265,Krause Ladder (6 Feet),Krause,Tools,Climbing Tools,1599,30,10.0,0,0
+1266,Tanishq Diamond Necklace,Tanishq,Jewelry,Necklaces,299999,7,2.0,0,0
+1267,Cartier Gold Earrings,Cartier,Jewelry,Earrings,149999,10,3.0,0,0
+1268,Bvlgari Platinum Ring,Bvlgari,Jewelry,Rings,247899,12,5.0,0,0
+1269,Van Cleef Emerald Bracelet,Van Cleef & Arples,Jewelry,Bracelets,199999,15,2.0,0,0
+1270,Mikimoto Pearl Necklace,Mikimoto,Jewelry,Necklaces,156599,8,0.0,0,0
+1271,Rolex Gold Watch,Rolex,Jewelry,Watches,699999,30,12.0,0,0
+1272,Diamond Stud Earrings,Harry Winston,Jewelry,Earrings,796599,15,2.0,0,0
+1273,Chopard Sapphire Ring,Chopard,Jewelry,Rings,349999,25,5.0,0,0
+1274,Pandora Silver Anklet,Pandora,Jewelry,Anklets,59999,20,8.0,0,0
+1275,Tanishq Pearl Necklace Set,Tanishq,Jewelry,Necklaces,22899,23,10.0,0,0
+1276,CaratLane Gold-Plated Drop Earrings,CaratLane,Jewelry,Earrings,14699,22,5.0,0,0
+1277,Nest Smart Thermostat,Nest,Smart Home,Home Automation,12999,10,15.0,0,0
+1278,Philips Smart Light Bulb,Philips,Smart Home,Lighting,3499,8,20.0,0,0
+1279,August Smart Door Lock,August,Smart Home,Home Security,9999,12,25.0,0,0
+1280,Ring Smart Security Camera,Ring,Smart Home,Home Security,7999,25,10.0,0,0
+1281,Amazon Echo Smart Speaker,Amazon Echo,Smart Home,Audio & Video,6489,20,25.0,0,0
+1282,iRobot Automatic Vacuum Cleaner,iRobot Roomba,Smart Home,Cleaning,24899,8,5.0,0,0
+1283,Haier Robot Floor Cleaner,Haier,Smart Home,Cleaning,66499,6,3.0,0,0
+1284,Ring Smart Doorbell,Ring,Smart Home,Home Security,4999,12,20.0,0,0
+1285,Nest Smart Smoke Detector,Nest Protect,Smart Home,Home Safety,8499,10,12.0,0,0
+1286,Lutron Smart Curtain,Lutron,Smart Home,Home Automation,14999,15,18.0,0,0
+1287,Dyson Smart Air Purifier,Dyson,Smart Home,Appliances,21999,8,18.0,0,0
+1288,Samsonite Luggage Set,Samsonite,Travel Accessories,Luggage,12999,10,15.0,0,0
+1289,Cabeau Travel Pillow,Cabeou,Travel Accessories,Comfort,2999,8,20.0,0,0
+1290,Bose Noise Cancelling Headphones,Bose,Travel Accessories,Audio,16999,12,25.0,0,0
+1291,Anker Portable Charger,Anker,Travel Accessories,Electronics,2499,8,18.0,0,0
+1292,Zendure Travel Adapter,Zendure,Travel Accessories,Electronics,1799,15,10.0,0,0
+1293,Bellroy Travel Wallet,Bellroy,Travel Accessories,Comfort,4999,18,12.0,0,0
+1294,Osprey Foldable Backpack,Osprey,Travel Accessories,Outdoor,1999,14,18.0,0,0
+1295,Cocoon Compact Travel Blanket,Cocoon,Travel Accessories,Luggage,1299,15,8.0,0,0
+1296,Hydro Flask Portable Water Bottle,Hydro Flask,Travel Accessories,Outdoor,2499,8,15.0,0,0
+1297,Nomatic Travel Backpack,Nomatic,Travel Accessories,Luggage,9999,12,25.0,0,0
+1298,Bose Blu-ray Player,Bose,Movies,Blu-ray & DVD Players,8999,15,10.0,0,0
+1299,Sony Home Theater System,Sony,Movies,Audio Systems,25999,12,15.0,0,0
+1300,DVD Player,LG,Movies,Blu-ray & DVD Players,2999,18,10.0,0,0
+1301,JBL Soundbar,JBL,Movies,Audio Systems,7499,10,12.0,0,0
+1302,Epson Projector EB-E01,Epson,Movies,Projectors,19999,8,20.0,0,0
+1303,Samsumg 4K Blu-ray Player,Samsung,Movies,Blu-ray & DVD Players,11999,10,15.0,0,0
+1304,Vizio 5.1 Channel Soundbar,Vizio,Movies,Audio Systems,15449,13,8.0,0,0
+1305,BenQ 1080p Projector,BenQ,Movies,Projectors,22499,6,7.0,0,0
+1306,Sony PlayStation 5 Console,Sony,Video Games,Consoles,49999,10,15.0,0,0
+1307,Microsoft Zbox Wireless Co troller,Microsoft,Video Games,Accessories,4999,13,12.0,0,0
+1308,Minecraft for PS4,Sony,Video Games,Games,2499,5,15.0,0,0
+1309,Razer Gaming Headset,Razer,Video Games,Accessories,6499,10,25.0,0,0
+1310,Logitech Gaming Mouse,Logitech,Video Games,Accessories,2499,15,10.0,0,0
