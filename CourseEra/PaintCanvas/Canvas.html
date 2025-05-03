@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Paint Canvas</title>
+    <link rel="stylesheet" href="Canvas.css" type="text/css">
+    <link rel="icon" href="CanvasLogo.png" type="images/png">
+</head>
+<body>
+    <div class="bg">
+        <h1 style="color:rgb(4, 4, 90)"><u>Paint Your Own Picture</u></h1>
+        <div class="getInput">
+            <label>Set Height :</label>
+            <input type="text" placeholder="Enter the Height" id="height" onkeypress="setHeight(event)">
+            <label>Set Width :</label>
+            <input type="text" placeholder="Enter the Width" id="width" onkeypress="setWidth(event)">
+        </div>
+        <div class="canvasBox">
+            <canvas id="canvas"></canvas>
+        </div>
+        <div class="getInput">
+            <label>Brush Color :</label>
+            <input type="color" id="colorPicker" value="#000000" style="width: 12.5%;">
+            <label>Brush Size :</label>
+            <input type="range" min="0" max="100" value="50" id="brushSize" style="width: 25%">
+            <button id="clearCanvas" onclick="clearCanvas()">Clear Canvas</button>
+        </div>
+    </div>
+    
+
+    <script src="Canvas.js"></script>
+</body>
+</html>

@@ -1,0 +1,59 @@
+*{
+    margin: 0px;
+    padding: 5px;
+    box-sizing: border-box;
+}
+
+.bg{
+    height: 98.15vh;
+    width: 99vw;
+    border: 6px solid black;
+    background: linear-gradient(to right, #09203F, #537895);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.canvasBox{
+    height: 85%;
+    width: 80%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.canvasBoxInner{
+    height: 100%;
+    width: 45%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+canvas{
+    height:80%;
+    width:100%;
+    border: 3px solid black;
+    border-radius: 5px;
+}
+
+button{
+    height:50px;
+    width: 150px;
+    font-weight: bold;
+    font-size: 20px;
+    border: 3px solid black;
+    border-radius: 5px;
+}
+
+input{
+    padding-top: 8px;
+    height:50px;
+    width: 280px;
+    font-weight: bold;
+    font-size: 20px;
+    border: 3px solid black;
+    border-radius: 5px;
+}

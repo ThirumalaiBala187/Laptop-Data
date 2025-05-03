@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Extract Unanswered Questions</title>
+</head>
+<body>
+
+    <h2>Upload a TXT File</h2>
+    <input type="file" id="fileInput" accept=".txt">
+    <button onclick="processFile()">Extract Unanswered Questions</button>
+    <a id="downloadLink" style="display:none">Download Unanswered Questions</a>
+
+    <script>
+        function processFile() {
+            const fileInput = document.getElementById("fileInput");
+            if (!fileInput.files.length) {
+                alert("Please upload a file first!");
+                return;
+            }
+
+            const file = fileInput.files[0];
+            const reader = new FileReader();
+
+            reader.onload = function(event) {
+                const fileContent = event.target.result;
+                const unansweredQuestions = extractUnansweredQuestions(fileContent);
+                downloadFile(unansweredQuestions);
+            };
+
+            reader.readAsText(file);
+        }
+
+        function extractUnansweredQuestions(inputText) {
+            const lines = inputText.split("\n");
+            let unansweredQuestions = [];
+            let currentQuestion = null;
+            let hasAnswer = false;
+
+            lines.forEach(line => {
+                line = line.trim();
+                if (line.startsWith("Q:")) {
+                    if (currentQuestion && !hasAnswer) {
+                        unansweredQuestions.push(currentQuestion);
+                    }
+                    currentQuestion = line; // Store the new question
+                    hasAnswer = false; // Reset answer flag
+                } else if (line.startsWith("A:")) {
+                    hasAnswer = true; // Mark that the current question has an answer
+                }
+            });
+
+            // Check last question
+            if (currentQuestion && !hasAnswer) {
+                unansweredQuestions.push(currentQuestion);
+            }
+
+            return unansweredQuestions.join("\n");
+        }
+
+        function downloadFile(content) {
+            const blob = new Blob([content], { type: "text/plain" });
+            const url = URL.createObjectURL(blob);
+            const downloadLink = document.getElementById("downloadLink");
+
+            downloadLink.href = url;
+            downloadLink.download = "unanswered_questions.txt";
+            downloadLink.style.display = "block";
+            downloadLink.textContent = "Download Unanswered Questions";
+        }
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Question Answering</title>
+</head>
+
+<body>
+    <h2>Upload Questions File</h2>
+    <input type="file" id="fileInput">
+    <button onclick="processFile()">Get Answers</button>
+    <a id="downloadLink" style="display:none">Download Answers</a>
+
+    <script>
+        const API_KEY = "AIzaSyBPMGud2kvgEyuFjsq_bqaH_54YQ3abv0g";
+        const API_URL = `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=${API_KEY}`;
+
+        function readFile(file) {
+            return new Promise((resolve, reject) => {
+                const reader = new FileReader();
+                reader.onload = () => resolve(reader.result.split("\n").filter(q => q.trim() !== ""));
+                reader.onerror = reject;
+                reader.readAsText(file);
+            });
+        }
+
+        async function getAnswer(question) {
+            try {
+                const response = await fetch(API_URL, {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify({
+                        contents: [{ parts: [{ text: "Give two lines best answers for " + question }] }]
+                    })
+                });
+
+                const data = await response.json();
+                console.log("Full API Response:", data);
+
+                const answer = data?.candidates?.[0]?.content?.parts?.[0]?.text || "No response";
+                console.log(`\n\nQ: ${question} \nA: ${answer}`);
+                return answer;
+
+            } catch (error) {
+                console.error("API Error:", error);
+                return "Error fetching response";
+            }
+        }
+
+        async function processFile() {
+            const file = document.getElementById("fileInput").files[0];
+            if (!file) {
+                alert("Please upload a file.");
+                return;
+            }
+
+            const questions = await readFile(file);
+            let answersContent = "";
+
+            for (let i = 0; i < questions.length; i++) {
+                console.log(`Processing Question ${i + 1}/${questions.length}...`);
+
+                // 500ms delay before each fetch
+                await new Promise(resolve => setTimeout(resolve, 1000));
+
+                const answer = await getAnswer(questions[i]);
+                answersContent += `Q: ${questions[i]}\nA: ${answer}\n\n`;
+            }
+
+            downloadFile(answersContent, "answers.txt");
+        }
+
+
+        function downloadFile(content, filename) {
+            const blob = new Blob([content], { type: "text/plain" });
+            const link = document.getElementById("downloadLink");
+            link.href = URL.createObjectURL(blob);
+            link.download = filename;
+            link.style.display = "block";
+            link.textContent = "Download Answers";
+        }
+    </script>
+</body>
+
+</html>

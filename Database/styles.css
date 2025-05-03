@@ -1,0 +1,120 @@
+body {
+    font-family: Arial, sans-serif;
+    background: #1a1a2e;
+    color: white;
+    margin: 0;
+    padding: 0;
+}
+
+/* Navigation Bar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    background: #0f3460;
+    padding: 15px 30px;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.nav-actions {
+    display: flex;
+    gap: 10px;
+}
+
+.create-btn, .icon-btn {
+    background: #16213e;
+    border: none;
+    color: white;
+    padding: 8px 12px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.create-btn:hover, .icon-btn:hover {
+    background: #1a1a3b;
+}
+
+/* Create Menu */
+.create-menu {
+    position: absolute;
+    background: #1f4068;
+    padding: 10px;
+    border-radius: 5px;
+    top: 50px;
+    left: 30px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+.hidden {
+    display: none;
+}
+
+.create-menu ul {
+    list-style: none;
+    padding: 0;
+}
+
+.create-menu li {
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 3px;
+}
+
+.create-menu li:hover {
+    background: #16213e;
+}
+
+/* Database Overview */
+.database-overview {
+    display: flex;
+    gap: 20px;
+    padding: 20px;
+}
+
+.database-card {
+    background: #16213e;
+    padding: 15px;
+    border-radius: 8px;
+    flex: 1;
+}
+
+.db-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.db-icon {
+    font-size: 1.5rem;
+}
+
+.db-details {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+
+/* Quick Actions & System Status */
+.system-section {
+    display: flex;
+    gap: 20px;
+    padding: 20px;
+}
+
+.quick-actions, .system-status {
+    background: #16213e;
+    padding: 15px;
+    border-radius: 8px;
+    flex: 1;
+}
+
+.status-box {
+    background: #1f4068;
+    padding: 10px;
+    margin-top: 10px;
+    border-radius: 5px;
+}

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LuxuryDBMS</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <header class="navbar">
+        <div class="logo">CloudDB Elite</div>
+        <div class="nav-actions">
+            <button class="create-btn" onclick="toggleCreateMenu()">Create ▼</button>
+            <input type="text" id="searchInput" placeholder="Search resources..." oninput="searchDatabase()">
+            <button class="icon-btn">⚙️</button>
+        </div>
+    </header>
+
+    <!-- Create Menu -->
+    <div id="createMenu" class="create-menu hidden">
+        <ul>
+            <li onclick="alert('Create Database')">📦 Create Database</li>
+            <li onclick="alert('Add Table')">📋 Add Table</li>
+            <li onclick="alert('Create Index')">🔑 Create Index</li>
+            <li onclick="alert('Stored Procedure')">🧩 Stored Procedure</li>
+            <li onclick="alert('Custom Function')">🛠️ Custom Function</li>
+            <li onclick="alert('Security Rule')">🛡️ Security Rule</li>
+        </ul>
+    </div>
+
+    <!-- Main Content -->
+    <main class="container">
+        
+        <!-- Database Overview -->
+        <section class="database-overview">
+            <div class="database-card" id="db1">
+                <div class="db-header">
+                    <span class="db-icon">🗄️</span>
+                    <div>
+                        <h3>Production DB</h3>
+                        <p>PostgreSQL</p>
+                    </div>
+                </div>
+                <div class="db-details">
+                    <span>🟢 Active</span>
+                    <span>2.4 TB</span>
+                    <span>US-West</span>
+                </div>
+            </div>
+
+            <div class="database-card" id="db2">
+                <div class="db-header">
+                    <span class="db-icon">🗄️</span>
+                    <div>
+                        <h3>Analytics DB</h3>
+                        <p>MongoDB</p>
+                    </div>
+                </div>
+                <div class="db-details">
+                    <span>🟢 Active</span>
+                    <span>5.7 TB</span>
+                    <span>EU-Central</span>
+                </div>
+            </div>
+
+            <button class="create-db-btn" onclick="alert('Create New Database')">➕ Create Database</button>
+        </section>
+
+        <!-- Quick Actions & System Status -->
+        <section class="system-section">
+            <div class="quick-actions">
+                <h3>Quick Actions</h3>
+                <button onclick="alert('Performance Analytics')">⚡ Performance Analytics</button>
+                <button onclick="alert('Security Settings')">🛡️ Security Settings</button>
+                <button onclick="alert('Backup & Recovery')">☁️ Backup & Recovery</button>
+            </div>
+
+            <div class="system-status">
+                <h3>System Status</h3>
+                <div class="status-box">
+                    <p>CPU Usage</p>
+                    <span>42%</span>
+                </div>
+                <div class="status-box">
+                    <p>Memory</p>
+                    <span>6.2/8 GB</span>
+                </div>
+                <div class="status-box">
+                    <p>Storage</p>
+                    <span>8.1/10 TB</span>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>

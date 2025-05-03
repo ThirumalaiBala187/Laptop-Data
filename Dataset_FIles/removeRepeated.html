@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Remove Duplicate Questions</title>
+</head>
+<body>
+
+    <h2>Upload a TXT File</h2>
+    <input type="file" id="fileInput" accept=".txt">
+    <button onclick="processFile()">Process File</button>
+    <a id="downloadLink" style="display:none">Download Cleaned File</a>
+
+    <script>
+        function processFile() {
+            const fileInput = document.getElementById("fileInput");
+            if (!fileInput.files.length) {
+                alert("Please upload a file first!");
+                return;
+            }
+
+            const file = fileInput.files[0];
+            const reader = new FileReader();
+
+            reader.onload = function(event) {
+                const fileContent = event.target.result;
+                const cleanedData = removeDuplicateQuestions(fileContent);
+                console.log(cleanedData);
+                downloadCleanedFile(cleanedData);
+            };
+
+            reader.readAsText(file);
+        }
+
+        function removeDuplicateQuestions(inputText) {
+            const lines = inputText.split("\n");
+            const seenQuestions = new Set();
+            const uniqueEntries = [];
+            var length=0;
+            lines.forEach(line => {
+                length++;
+                const [question, answer] = line.split("\t");
+                if (question && !seenQuestions.has(question.trim())) {
+                    seenQuestions.add(question.trim());
+                    uniqueEntries.push(line);
+                }
+            });
+
+            return uniqueEntries.join("\n");
+            // return length;
+        }
+
+        function downloadCleanedFile(cleanedData) {
+            const blob = new Blob([cleanedData], { type: "text/plain" });
+            const url = URL.createObjectURL(blob);
+            const downloadLink = document.getElementById("downloadLink");
+
+            downloadLink.href = url;
+            downloadLink.download = "cleaned_data.txt";
+            downloadLink.style.display = "block";
+            downloadLink.textContent = "Download Cleaned File";
+        }
+    </script>
+
+</body>
+</html>

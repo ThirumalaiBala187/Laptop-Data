@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forums</title>
+    <link rel="stylesheet" href="styles.css" type="text/css">
+    <script src="https://kit.fontawesome.com/82e94ecea6.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <div class="navbar">
+        <div class="logo">
+            <img src="ProjectLogo.png" alt="ArivupathAI Logo">
+            <div class="logoText">ArivupathAI</div>
+        </div>
+        <div class="headerOptions">
+            <p><i class="fa-solid fa-house-user"></i>&nbsp;Home</p>
+            <p><i class="fa-solid fa-bell"></i>&nbsp;Notifications</p>
+            <p><i class="fa-solid fa-book"></i>&nbsp;Courses</p>
+            <div class="streak"><span id="streakCount"><i class="fa-solid fa-fire"></i>&emsp;0</span>&nbsp;Days Streak
+            </div>
+        </div>
+    </div>
+
+    <div class="background">
+        <div class="shape shape1"></div>
+        <div class="shape shape2"></div>
+        <div class="shape shape3"></div>
+        <div class="shape shape4"></div>
+        <div class="shape shape5"></div>
+    </div>
+
+    <div class="content">
+        <div class="contentInner1">
+            <div class="filters1">
+                <b style="color: #1E3050;">Filters&emsp;<i class="fa-solid fa-filter"></i></b>
+                <ul>
+                    <li><i class="fa-solid fa-address-card"></i>&emsp;Your posts</li>
+                    <li><i class="fa-solid fa-heart"></i>&emsp;Likes</li>
+                    <li><i class="fa-solid fa-reply"></i>&emsp;Replies</li>
+                </ul>
+            </div>
+
+            <div class="filters1" style="border-top: 0px;">
+                <b style="color: #1E3050;">Trending Tags&emsp;<i class="fa-solid fa-tags"></i></b>
+                <ul>
+                    <li><i class="fa-solid fa-hashtag"></i>&emsp;No tags found...</li>
+                </ul>
+            </div>
+        </div>
+
+
+        <div class="contentInner2">
+            <div class="contentHeader">
+                <h1>Discussion Forums</h1>
+                <div class="btn newThread" id="newThreadBtn">New Thread&emsp;<i class="fa-solid fa-plus"></i></div>
+            </div>
+            <div class="contentFilter">
+                <button class="filtersButtons active">All</button>
+                <button class="filtersButtons">Latest</button>
+                <button class="filtersButtons">Popular</button>
+                <button class="filtersButtons">Unanswered</bu>
+            </div>
+            <div class="threadContainer"id="postsContainer">
+                <div id="newThreadForm" class="card hidden">
+                    <div class="card-header">
+                        <h2>Create New Thread</h2>
+                        <button id="closeFormBtn" class="btn-ghost">✕</button>
+                    </div>
+                    <div class="card-content">
+                        <input id="threadTitle" type="text" placeholder="Thread title" class="input" value="">
+                        <textarea id="threadContent" placeholder="What would you like to discuss?"
+                            class="textarea" value=""></textarea>
+                        <div id="tagsContainer" class="tags"></div>
+                        <div class="tag-input">
+                            <input id="tagInput" type="text" placeholder="Add tags (press Enter)" class="input" value="">
+                            <button id="addTagBtn" class="btn-outline">🏷️</button>
+                        </div>
+                    </div>
+                    <div class="card-footer">
+                        <button id="cancelBtn" class="btn-outline">Cancel</button>
+                        <button id="postThreadBtn" class="btn-primary">Post Thread</button>
+                    </div>
+                </div>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>

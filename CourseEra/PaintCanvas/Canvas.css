@@ -1,0 +1,70 @@
+*{
+    margin:0px;
+    padding: 5px;
+    box-sizing: border-box;
+    flex-shrink: auto;
+}
+
+::-webkit-scrollbar{
+    height: 0px;
+    width: 0px;
+}
+
+.bg{
+    height: 98.15vh;
+    width: 99vw;
+    border: 6px solid rgb(4, 4, 90);
+    background: linear-gradient(to right, #4E65FF 10%,#92EFFD 75%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    overflow-x: hidden;
+    overflow-y: scroll;
+}
+
+.canvasBox{
+    height:750px;
+    width:1500px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.getInput{
+    height: 80px;
+    width: 750px;
+    border: 2px solid black;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    font-family: sans-serif;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+input{
+    height:70%;
+    width: 30%;
+    border: 2px solid black;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+#canvas{
+    height:500px;
+    width:500px;
+    border: 4px solid black;
+    border-radius: 10px;
+    background-color: white;
+}
+
+#clearCanvas{
+    height: 70%;
+    width: 20%;
+    border: 2px solid black;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: bold;
+}
+

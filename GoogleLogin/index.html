@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Google Login</title>
+    <script src="https://accounts.google.com/gsi/client" async defer></script>
+    </head>
+    <body>
+
+    <div id="g_id_onload"
+         data-client_id="138674387544-3c4f3o7q1o00ulnr45lr89m65qgoiajg.apps.googleusercontent.com"
+         data-callback="handleCredentialResponse"
+         data-auto_prompt="false"
+         data-ux_mode="popup">
+    </div>
+    
+    <div class="g_id_signin" data-type="standard"></div>
+    
+import java.io.Console;
+    <div id="user-info"></div>
+    
+    <script>
+      function handleCredentialResponse(response) {
+        const data = JSON.parse(atob(response.credential.split(".")[1]));
+        document.getElementById("user-info").innerHTML = 
+          `<p><b>Name:</b> ${data.name}</p>
+           <p><b>Email:</b> ${data.email}</p>`;
+      }
+    </script>
+    
+      
+
+</body>
+
+</html>

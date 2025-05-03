@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Extract Questions with Answers</title>
+</head>
+<body>
+
+    <h2>Upload a TXT File</h2>
+    <input type="file" id="fileInput" accept=".txt">
+    <button onclick="processFile()">Extract Questions with Answers</button>
+    <a id="downloadLink" style="display:none">Download Filtered Dataset</a>
+
+    <script>
+        function processFile() {
+            const fileInput = document.getElementById("fileInput");
+            if (!fileInput.files.length) {
+                alert("Please upload a file first!");
+                return;
+            }
+
+            const file = fileInput.files[0];
+            const reader = new FileReader();
+
+            reader.onload = function(event) {
+                const fileContent = event.target.result;
+                const questionsWithAnswers = extractQuestionsWithAnswers(fileContent);
+                downloadFile(questionsWithAnswers);
+            };
+
+            reader.readAsText(file);
+        }
+
+        function extractQuestionsWithAnswers(inputText) {
+            const lines = inputText.split("\n");
+            let dataset = [];
+            let currentQuestion = null;
+            let currentAnswers = [];
+
+            lines.forEach(line => {
+                line = line.trim();
+                if (line.startsWith("Q:")) {
+                    if (currentQuestion && currentAnswers.length > 0) {
+                        dataset.push(currentQuestion, ...currentAnswers);
+                    }
+                    currentQuestion = line;
+                    currentAnswers = [];
+                } else if (line.startsWith("A:")) {
+                    currentAnswers.push(line);
+                }
+            });
+
+            // Add last question if it has answers
+            if (currentQuestion && currentAnswers.length > 0) {
+                dataset.push(currentQuestion, ...currentAnswers);
+            }
+
+            return dataset.join("\n");
+        }
+
+        function downloadFile(content) {
+            const blob = new Blob([content], { type: "text/plain" });
+            const url = URL.createObjectURL(blob);
+            const downloadLink = document.getElementById("downloadLink");
+
+            downloadLink.href = url;
+            downloadLink.download = "questions_with_answers.txt";
+            downloadLink.style.display = "block";
+            downloadLink.textContent = "Download Filtered Dataset";
+        }
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="http://www.dukelearntoprogram.com/course1/common/js/image/SimpleImage.js"></script>
+    <link rel="stylesheet" href="GreenScreen.css" type="text/css">
+    <link rel="icon" href="Logo.png" type="image/jpg">
+</head>
+<body>
+    <div class="bg">
+        <h1 style="font-size: 45px;">Green Screen Editor</h1>
+        <div class="canvasBox">
+            <div class="canvasBoxInner">
+                <canvas id="fgCanvas"></canvas>
+                <input type="file" id="fgImage"></input>
+            </div>
+            <div class="canvasBoxInner">
+                <canvas id="bgCanvas"></canvas>
+                <input type="file" id="bgImage"></input>
+            </div>
+            <div class="canvasBoxInner">
+                <button style="margin: 20px 265px 20px 265px ;" id="applyFilter">APPLY FILTER</button>
+                <canvas id="finalCanvas"></canvas>
+                <button style="margin: 20px 265px 20px 265px ;" id="clearCanvas">RESET IMAGE</button>
+            </div>
+        </div>
+    </div>
+    
+    <script src="GreenScreen.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Chatbot Popup</title>
+    <link rel="stylesheet" href="popup.css" type="text/css" id="cssFile">
+</head>
+
+<body>
+
+    <div class="chatToggle" id="chatToggle">
+        <div class="notificationBadge" id="notificationBadge">1</div>
+        <span class="chatIcon">💬</span>
+        <span class="closeIcon">✕</span>
+    </div>
+
+    <div class="chatContainer" id="chatContainer">
+        <div class="chatHeader" id="chatHeader">
+            <div class="botInfo">
+                <div class="botAvatar" id="botAvatar">
+                    <img src="logo.png" class="botLogo">
+                </div>
+                <div>
+                    <h4>Vid.AI</h4>
+                    <div class="botInfoInner">
+                        <span>online</span>
+                        <div class="botStatus"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="screenOptions">
+                <i class="fa-solid fa-expand" id="maximizeChat"></i>
+                <i class="fa-solid fa-xmark" id="closeChat"></i>
+            </div>
+        </div>
+
+        <div class="chatBody" id="chatBody"></div>
+
+        <div class="chatFooter">
+            <div class="messageInputContainer" tabindex="0">
+                <i class="fa-solid fa-square-caret-down" style="margin-left: 10px;" id="dropdown-icon"></i>
+                <div class="dropdown-content" id="dropdown-menu">
+                    <div class="selected-option">Vidai-1.0</div>
+                    <div style="border-radius: 0px;">Vidai-2.0</div>
+                    <div style=" border-radius: 0px 0px 10px 10px;">Vidai-3.0</div>
+                </div>
+                <input type="text" class="messageInput" id="messageInput" placeholder="Type your message..."><i
+                    class="fa-solid fa-microphone" id="startRecording" style="cursor: pointer;"></i>
+            </div>
+            <button class="sendButton" id="sendButton">
+                <span>➤</span>
+            </button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+    <script src="https://kit.fontawesome.com/82e94ecea6.js" crossorigin="anonymous"></script>
+</body>
+
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Extract & Download Questions</title>
+</head>
+
+<body>
+
+    <h2>Upload a TXT File with Questions</h2>
+    <input type="file" id="fileInput" accept=".txt">
+    <button onclick="processFile()">Extract & Download</button>
+    <h3>Extracted Questions:</h3>
+    <div id="output"></div>
+    <a id="downloadLink" style="display:none">Download Extracted Questions</a>
+
+    <script>
+        function processFile() {
+            const fileInput = document.getElementById("fileInput");
+            if (!fileInput.files.length) {
+                alert("Please upload a file first!");
+                return;
+            }
+
+            const file = fileInput.files[0];
+            const reader = new FileReader();
+
+            reader.onload = function (event) {
+                const fileContent = event.target.result;
+                const questions = extractQuestions(fileContent);
+                displayQuestions(questions);
+                downloadFile(questions);
+            };
+
+            reader.readAsText(file);
+        }
+
+        function extractQuestions(text) {
+            return text
+                .split("\n")
+                .filter(line => line.trim().startsWith("Q:"))
+                .map(line => line.trim().substring(2).trim());
+        }
+
+        function displayQuestions(questions) {
+            const outputDiv = document.getElementById("output");
+            outputDiv.innerHTML = "<ul>" + questions.map(q => `<li>${q}</li>`).join("") + "</ul>";
+        }
+
+        function downloadFile(questions) {
+            const content = questions.join("\n");
+            const blob = new Blob([content], { type: "text/plain" });
+            const url = URL.createObjectURL(blob);
+
+            const downloadLink = document.getElementById("downloadLink");
+            downloadLink.href = url;
+            downloadLink.download = "extracted_questions.txt";
+            downloadLink.style.display = "block";
+            downloadLink.textContent = "Download Extracted Questions";
+        }
+    </script>
+
+</body>
+</html>

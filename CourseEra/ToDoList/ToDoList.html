@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-Do List</title>
+    <link rel="stylesheet" href="ToDo.css" type="text/css">
+    <link rel="icon" href="ToDo.jpeg" type="imag/jpeg">
+</head>
+<body>
+    <div class="bg">
+        <h1 style="color:rgb(4, 4, 90)"><u>To-Do List Application</u></h1>
+        <div class="addTaskBox">
+            <input type="text" id="todoinput" placeholder="Enter the new Task name" class="inputBox">
+            <button id="addtask" onclick="addtask()">Add Task</button>
+        </div>
+        <div class="tasks" id="taskbox">
+            <ol id="tasks"></ol>
+            <h2 id="no-task">No tasks has been added yet.</h2>
+        </div>
+        <script src="ToDo.js"></script>
+    </div>
+</body>
+</html>

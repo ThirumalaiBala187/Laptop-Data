@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ludo Game</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+            font-family: Arial, sans-serif;
+        }
+        #game-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        #board {
+            width: 600px;
+            height: 600px;
+            display: grid;
+            grid-template-columns: repeat(15, 1fr);
+            grid-template-rows: repeat(15, 1fr);
+            border: 2px solid #333;
+            background-color: #fff;
+            position: relative;
+        }
+        .cell {
+            border: 1px solid #ccc;
+            position: relative;
+        }
+        .home {
+            background-color: #ffd700;
+        }
+        .path {
+            background-color: #e0e0e0;
+        }
+        .start-red { background-color: #ff4d4d; }
+        .start-blue { background-color: #4d4dff; }
+        .start-green { background-color: #4dff4d; }
+        .start-yellow { background-color: #ffff4d; }
+        #dice {
+            margin-top: 20px;
+            width: 60px;
+            height: 60px;
+            cursor: pointer;
+        }
+        #turn {
+            margin-top: 10px;
+            font-size: 20px;
+        }
+        .coin {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            transition: all 0.3s ease;
+        }
+    </style>
+</head>
+<body>
+    <div id="game-container">
+        <div id="board"></div>
+        <svg id="dice" viewBox="0 0 100 100">
+            <rect x="10" y="10" width="80" height="80" rx="10" fill="#fff" stroke="#000" stroke-width="4"/>
+            <circle cx="30" cy="30" r="8" fill="#000"/>
+            <circle cx="70" cy="70" r="8" fill="#000"/>
+        </svg>
+        <div id="turn">Player 1's Turn (Red)</div>
+    </div>
+
+    <script>
+        const board = document.getElementById('board');
+        const diceSVG = document.getElementById('dice');
+        const turnDisplay = document.getElementById('turn');
+
+        const coinSVG = (color) => `
+            <svg class="coin" viewBox="0 0 40 40">
+                <circle cx="20" cy="20" r="18" fill="${color}" stroke="#000" stroke-width="2"/>
+            </svg>
+        `;
+
+        const diceFaces = [
+            `<circle cx="50" cy="50" r="8" fill="#000"/>`,
+            `<circle cx="30" cy="30" r="8" fill="#000"/><circle cx="70" cy="70" r="8" fill="#000"/>`,
+            `<circle cx="30" cy="30" r="8" fill="#000"/><circle cx="50" cy="50" r="8" fill="#000"/><circle cx="70" cy="70" r="8" fill="#000"/>`,
+            `<circle cx="30" cy="30" r="8" fill="#000"/><circle cx="30" cy="70" r="8" fill="#000"/><circle cx="70" cy="30" r="8" fill="#000"/><circle cx="70" cy="70" r="8" fill="#000"/>`,
+            `<circle cx="30" cy="30" r="8" fill="#000"/><circle cx="30" cy="70" r="8" fill="#000"/><circle cx="50" cy="50" r="8" fill="#000"/><circle cx="70" cy="30" r="8" fill="#000"/><circle cx="70" cy="70" r="8" fill="#000"/>`,
+            `<circle cx="30" cy="30" r="8" fill="#000"/><circle cx="30" cy="50" r="8" fill="#000"/><circle cx="30" cy="70" r="8" fill="#000"/><circle cx="70" cy="30" r="8" fill="#000"/><circle cx="70" cy="50" r="8" fill="#000"/><circle cx="70" cy="70" r="8" fill="#000"/>`
+        ];
+
+        const players = [
+            { color: 'red', coins: [{ pos: [6, 1], inPlay: false }, { pos: [6, 2], inPlay: false }, { pos: [7, 1], inPlay: false }, { pos: [7, 2], inPlay: false }], turn: true, start: [8, 1] },
+            { color: 'green', coins: [{ pos: [1, 6], inPlay: false }, { pos: [1, 7], inPlay: false }, { pos: [2, 6], inPlay: false }, { pos: [2, 7], inPlay: false }], turn: false, start: [1, 6] },
+            { color: 'blue', coins: [{ pos: [6, 12], inPlay: false }, { pos: [6, 13], inPlay: false }, { pos: [7, 12], inPlay: false }, { pos: [7, 13], inPlay: false }], turn: false, start: [8, 13] },
+            { color: 'yellow', coins: [{ pos: [12, 6], inPlay: false }, { pos: [12, 7], inPlay: false }, { pos: [13, 6], inPlay: false }, { pos: [13, 7], inPlay: false }], turn: false, start: [13, 6] }
+        ];
+
+        const path = [
+            [8, 1], [8, 2], [8, 3], [8, 4], [8, 5], [7, 5], [6, 5], [5, 5], [4, 5], [3, 5], [2, 5], [1, 5],
+            [1, 6], [1, 7], [1, 8], [2, 8], [3, 8], [4, 8], [5, 8], [6, 8], [7, 8], [8, 8], [8, 9], [8, 10],
+            [8, 11], [8, 12], [8, 13], [9, 13], [10, 13], [11, 13], [12, 13], [13, 13], [13, 12], [13, 11],
+            [13, 10], [13, 9], [13, 8], [13, 7], [13, 6], [12, 6], [11, 6], [10, 6], [9, 6], [8, 6], [7, 6],
+            [6, 6], [5, 6], [4, 6], [3, 6], [2, 6], [1, 6]
+        ];
+
+        function createBoard() {
+            for (let i = 0; i < 15; i++) {
+                for (let j = 0; j < 15; j++) {
+                    const cell = document.createElement('div');
+                    cell.classList.add('cell');
+                    if (path.some(p => p[0] === i && p[1] === j)) cell.classList.add('path');
+                    if ((i === 7 && j === 7)) cell.classList.add('home');
+                    if (i >= 6 && i <= 7 && j >= 1 && j <= 2) cell.classList.add('start-red');
+                    if (i >= 1 && i <= 2 && j >= 6 && j <= 7) cell.classList.add('start-green');
+                    if (i >= 6 && i <= 7 && j >= 12 && j <= 13) cell.classList.add('start-blue');
+                    if (i >= 12 && i <= 13 && j >= 6 && j <= 7) cell.classList.add('start-yellow');
+                    cell.dataset.row = i;
+                    cell.dataset.col = j;
+                    board.appendChild(cell);
+                }
+            }
+            placeCoins();
+        }
+
+        function placeCoins() {
+            players.forEach(player => {
+                player.coins.forEach(coin => {
+                    const cell = document.querySelector(`[data-row="${coin.pos[0]}"][data-col="${coin.pos[1]}"]`);
+                    cell.innerHTML = coinSVG(player.color);
+                });
+            });
+        }
+
+        let currentPlayer = 0;
+        diceSVG.addEventListener('click', () => {
+            if (isAnimating) return;
+            const roll = Math.floor(Math.random() * 6) + 1;
+            diceSVG.innerHTML = `<rect x="10" y="10" width="80" height="80" rx="10" fill="#fff" stroke="#000" stroke-width="4"/>${diceFaces[roll - 1]}`;
+            handleRoll(roll);
+        });
+
+        function handleRoll(roll) {
+            const player = players[currentPlayer];
+            let coinToMove = player.coins.find(coin => coin.inPlay);
+
+            if (!coinToMove && roll === 6) {
+                coinToMove = player.coins.find(coin => !coin.inPlay);
+                if (coinToMove) {
+                    coinToMove.inPlay = true;
+                    coinToMove.pos = player.start;
+                    updateBoard();
+                    switchPlayer();
+                }
+            } else if (coinToMove) {
+                const currentIndex = path.findIndex(p => p[0] === coinToMove.pos[0] && p[1] === coinToMove.pos[1]);
+                const targetIndex = Math.min(currentIndex + roll, path.length - 1);
+                moveCoinStepByStep(coinToMove, currentIndex, targetIndex);
+            } else {
+                switchPlayer();
+            }
+        }
+
+        function moveCoinStepByStep(coin, startIndex, targetIndex) {
+            isAnimating = true;
+            let currentIndex = startIndex;
+
+            function step() {
+                if (currentIndex < targetIndex) {
+                    currentIndex++;
+                    coin.pos = path[currentIndex];
+                    updateBoard();
+                    setTimeout(step, 300);
+                } else {
+                    isAnimating = false;
+                    switchPlayer();
+                }
+            }
+            step();
+        }
+
+        function updateBoard() {
+            document.querySelectorAll('.cell').forEach(cell => cell.innerHTML = '');
+            placeCoins();
+        }
+
+        function switchPlayer() {
+            players[currentPlayer].turn = false;
+            currentPlayer = (currentPlayer + 1) % players.length;
+            players[currentPlayer].turn = true;
+            turnDisplay.textContent = `Player ${currentPlayer + 1}'s Turn (${players[currentPlayer].color})`;
+        }
+
+        createBoard();
+    </script>
+</body>
+</html>

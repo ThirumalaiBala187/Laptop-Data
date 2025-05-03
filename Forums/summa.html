@@ -1,0 +1,752 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forum Page</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            min-height: 100vh;
+            font-family: system-ui, -apple-system, sans-serif;
+            background: #f0f9ff;
+            overflow-x: hidden;
+        }
+
+        header {
+            background: white;
+            box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+            padding: 0rem 1.5rem;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .logo {
+            height: 2.5rem;
+            width: 2.5rem;
+            background: linear-gradient(to right, #2dd4bf, #22d3ee);
+            border-radius: 0.75rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .logo svg {
+            height: 1.5rem;
+            width: 1.5rem;
+            color: white;
+        }
+
+        .brand-name {
+            width: 90%;
+            height: 40%;
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #1f2937;
+        }
+
+        .docs-heading {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #333;
+            margin-left: 1rem;
+        }
+
+        .header-nav {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            margin-top: 0.5rem;
+        }
+
+        @media (min-width: 640px) {
+            .header-nav {
+                margin-top: 0;
+            }
+        }
+
+        .header-nav a {
+            color: #374151;
+            text-decoration: none;
+            transition: color 0.2s, transform 0.2s;
+        }
+
+        .header-nav a:hover {
+            color:#35B8F0;
+            transform: scale(1.05);
+        }
+
+        .streak {
+            font-size: 0.875rem;
+            font-weight: 500;
+            padding: 1rem 1rem;
+            background-color: #e6f9fb;
+            color: #374151;
+            border-radius: 9999px;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+        
+        .streak:hover {
+            transform: scale(1.2, 1);
+        }
+
+        .main-layout {
+            display: flex;
+            height: calc(100vh - 4rem);
+            overflow: hidden;
+        }
+
+        .sidebar {
+            width: 17rem;
+            background-color: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(8px);
+            border-right: 1px solid #e5e7eb;
+            padding: 1.5rem;
+            height: 100%;
+            overflow-y: auto;
+        }
+
+        .sidebar h2 {
+            font-size: 1.125rem;
+            font-weight: 600;
+            color: #1f2937;
+            margin-bottom: 1rem;
+        }
+
+        .sidebar ul {
+            list-style: none;
+        }
+
+        .sidebar li:not(:last-child) {
+            margin-bottom: 0.75rem;
+        }
+
+        .sidebar a {
+            display: block;
+            color: #374151;
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        .sidebar a:hover {
+            color: #0d9488;
+        }
+
+        .background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            z-index: -1;
+            overflow: hidden;
+        }
+         
+        @keyframes float {
+            0% {
+                transform: rotate(0deg) translate(0, 0) scale(1);
+            }
+             
+            50% {
+                transform: rotate(180deg) translateX(50px) translateY(100px) scale(1.1);
+            }
+             
+            100% {
+                transform: rotate(360deg) translate(0, 0) scale(1);
+            }
+        }
+         
+        .shape {
+            position: absolute;
+            border-radius: 50%;
+            background: linear-gradient(45deg, rgba(6, 182, 212, 0.3), rgba(6, 182, 212, 0.4));
+            animation: float 8s infinite ease-in-out;
+            will-change: transform, opacity;
+        }
+         
+        .shape1 {
+            width: 600px;
+            height: 600px;
+            top: -200px;
+            right: -100px;
+        }
+         
+        .shape2 {
+            width: 500px;
+            height: 500px;
+            bottom: -100px;
+            left: -150px;
+            animation-delay: 2s;
+            background: linear-gradient(45deg, rgba(125, 211, 252, 0.3), rgba(147, 197, 253, 0.4));
+        }
+         
+        .shape3 {
+            width: 400px;
+            height: 400px;
+            top: 20%;
+            left: 30%;
+            animation-delay: 4s;
+            background: linear-gradient(45deg, rgba(147, 197, 253, 0.3), rgba(186, 230, 253, 0.4));
+        }
+         
+        .shape4 {
+            width: 300px;
+            height: 300px;
+            top: 10%;
+            left: 10%;
+            animation-delay: 6s;
+            background: linear-gradient(45deg, rgba(186, 230, 253, 0.3), rgba(125, 211, 252, 0.4));
+        }
+         
+        .shape5 {
+            width: 350px;
+            height: 350px;
+            bottom: 10%;
+            right: 20%;
+            animation-delay: 8s;
+            background: linear-gradient(45deg, rgba(6, 182, 212, 0.3), rgba(125, 211, 252, 0.4));
+        }
+
+        /* Forum specific styling */
+        .main-content {
+            flex: 2;
+            padding: 2rem;
+            overflow-y: auto;
+            height: 100%;
+        }
+
+        .forum-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 2rem;
+        }
+
+        .forum-title {
+            font-size: 1.75rem;
+            font-weight: 700;
+            color: #1f2937;
+        }
+
+        .new-thread-btn {
+            background: linear-gradient(to right, #2dd4bf, #35B8F0);
+            color: white;
+            border: none;
+            padding: 0.75rem 1.5rem;
+            border-radius: 0.5rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+
+        .new-thread-btn:hover {
+            transform: scale(1.05);
+        }
+
+        .forum-filters {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .filter-btn {
+            padding: 0.5rem 1rem;
+            background: white;
+            border: 1px solid #e5e7eb;
+            border-radius: 0.5rem;
+            font-size: 0.875rem;
+            color: #374151;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .filter-btn:hover, .filter-btn.active {
+            background: #35B8F0;
+            color: white;
+            border-color: #35B8F0;
+        }
+
+        .thread-list {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .thread-card {
+            background-color: rgba(255, 255, 255, 0.8);
+            border-radius: 0.5rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            padding: 1.5rem;
+            transition: all 0.3s;
+        }
+
+        .thread-card:hover {
+            transform: scale(1.02);
+            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .thread-header {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 1rem;
+        }
+
+        .thread-author {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .author-avatar {
+            width: 2.5rem;
+            height: 2.5rem;
+            border-radius: 50%;
+            background: linear-gradient(to right, #22d3ee, #60a5fa);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 600;
+        }
+
+        .author-info {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .author-name {
+            font-weight: 600;
+            color: #1f2937;
+        }
+
+        .thread-date {
+            font-size: 0.875rem;
+            color: #6b7280;
+        }
+
+        .thread-category {
+            font-size: 0.75rem;
+            background: #e6f9fb;
+            color: #35B8F0;
+            padding: 0.25rem 0.75rem;
+            border-radius: 9999px;
+        }
+
+        .thread-title {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: #1f2937;
+            margin-bottom: 0.75rem;
+        }
+
+        .thread-content {
+            color: #4b5563;
+            margin-bottom: 1.5rem;
+        }
+
+        .thread-actions {
+            display: flex;
+            gap: 1.5rem;
+        }
+
+        .thread-action {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: #6b7280;
+            cursor: pointer;
+            transition: color 0.2s;
+        }
+
+        .thread-action:hover {
+            color: #35B8F0;
+        }
+
+        .thread-action svg {
+            width: 1.25rem;
+            height: 1.25rem;
+        }
+
+        .replies-section {
+            padding-top: 1rem;
+            margin-top: 1rem;
+            border-top: 1px solid #e5e7eb;
+        }
+
+        .reply-card {
+            background: #f3f4f6;
+            border-radius: 0.5rem;
+            padding: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .reply-header {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 0.75rem;
+        }
+
+        .reply-author {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .reply-avatar {
+            width: 2rem;
+            height: 2rem;
+            border-radius: 50%;
+            background: linear-gradient(to right, #60a5fa, #818cf8);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 600;
+            font-size: 0.75rem;
+        }
+
+        .reply-content {
+            color: #4b5563;
+            margin-bottom: 0.75rem;
+        }
+
+        .reply-actions {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .reply-action {
+            display: flex;
+            align-items: center;
+            gap: 0.3rem;
+            color: #6b7280;
+            font-size: 0.875rem;
+            cursor: pointer;
+            transition: color 0.2s;
+        }
+
+        .reply-action:hover {
+            color: #35B8F0;
+        }
+
+        .reply-action svg {
+            width: 1rem;
+            height: 1rem;
+        }
+
+        .reply-form {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+
+        .current-user-avatar {
+            width: 2.5rem;
+            height: 2.5rem;
+            border-radius: 50%;
+            background: linear-gradient(to right, #818cf8, #a78bfa);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 600;
+        }
+
+        .reply-input-container {
+            flex: 1;
+            position: relative;
+        }
+
+        .reply-input {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid #e5e7eb;
+            border-radius: 0.5rem;
+            resize: none;
+            height: 5rem;
+        }
+
+        .reply-input:focus {
+            outline: none;
+            border-color: #35B8F0;
+        }
+
+        .reply-submit {
+            position: absolute;
+            bottom: 0.75rem;
+            right: 0.75rem;
+            background: linear-gradient(to right, #2dd4bf, #35B8F0);
+            color: white;
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: 0.375rem;
+            cursor: pointer;
+        }
+
+        .pagination {
+            display: flex;
+            justify-content: center;
+            gap: 0.5rem;
+            margin-top: 2rem;
+        }
+
+        .page-btn {
+            width: 2.5rem;
+            height: 2.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 0.375rem;
+            background: white;
+            border: 1px solid #e5e7eb;
+            color: #374151;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .page-btn:hover, .page-btn.active {
+            background: #35B8F0;
+            color: white;
+            border-color: #35B8F0;
+        }
+    </style>
+</head>
+<body>
+    <div class="background">
+        <div class="shape shape1"></div>
+        <div class="shape shape2"></div>
+        <div class="shape shape3"></div>
+        <div class="shape shape4"></div>
+        <div class="shape shape5"></div>
+    </div>
+    
+    <header>
+        <div class="logo-container">
+            <div class="logo">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M12 2L2 7l10 5 10-5-10-5z"></path>
+                    <path d="M2 17l10 5 10-5"></path>
+                    <path d="M2 12l10 5 10-5"></path>
+                </svg>
+            </div>
+            <div class="brand-name">ForumFlow</div>
+        </div>
+        
+        <div class="header-nav">
+            <a href="#">Home</a>
+            <a href="#">Categories</a>
+            <a href="#">Search</a>
+            <div class="streak">🔥 5 day streak</div>
+        </div>
+    </header>
+    
+    <div class="main-layout">
+        <aside class="sidebar">
+            <h2>Categories</h2>
+            <ul>
+                <li><a href="#">General Discussion</a></li>
+                <li><a href="#">Announcements</a></li>
+                <li><a href="#">Help & Support</a></li>
+                <li><a href="#">Feature Requests</a></li>
+                <li><a href="#">Tutorials</a></li>
+                <li><a href="#">Showcase</a></li>
+            </ul>
+            
+            <h2 class="mt-6">Popular Tags</h2>
+            <ul>
+                <li><a href="#">#beginners</a></li>
+                <li><a href="#">#advanced</a></li>
+                <li><a href="#">#tips</a></li>
+                <li><a href="#">#resources</a></li>
+                <li><a href="#">#bugs</a></li>
+            </ul>
+        </aside>
+        
+        <main class="main-content">
+            <div class="forum-header">
+                <h1 class="forum-title">General Discussion</h1>
+                <button class="new-thread-btn">New Thread</button>
+            </div>
+            
+            <div class="forum-filters">
+                <button class="filter-btn active">Latest</button>
+                <button class="filter-btn">Popular</button>
+                <button class="filter-btn">Unanswered</button>
+                <button class="filter-btn">My Threads</button>
+            </div>
+            
+            <div class="thread-list">
+                <div class="thread-card">
+                    <div class="thread-header">
+                        <div class="thread-author">
+                            <div class="author-avatar">JD</div>
+                            <div class="author-info">
+                                <div class="author-name">John Doe</div>
+                                <div class="thread-date">Yesterday at 3:45 PM</div>
+                            </div>
+                        </div>
+                        <div class="thread-category">Help & Support</div>
+                    </div>
+                    
+                    <h3 class="thread-title">Getting started with the new API version</h3>
+                    <p class="thread-content">
+                        I'm trying to update my integration to use the new API version, but I'm running into some issues with authentication. Has anyone else faced similar problems?
+                    </p>
+                    
+                    <div class="thread-actions">
+                        <div class="thread-action">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+                            </svg>
+                            <span>24 Likes</span>
+                        </div>
+                        <div class="thread-action">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path>
+                            </svg>
+                            <span>12 Replies</span>
+                        </div>
+                        <div class="thread-action">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z"></path>
+                            </svg>
+                            <span>Share</span>
+                        </div>
+                    </div>
+                    
+                    <div class="replies-section">
+                        <div class="reply-card">
+                            <div class="reply-header">
+                                <div class="reply-author">
+                                    <div class="reply-avatar">AS</div>
+                                    <div class="author-info">
+                                        <div class="author-name">Alice Smith</div>
+                                        <div class="thread-date">Today at 9:20 AM</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <p class="reply-content">
+                                I had the same issue. Make sure you're using the new authentication headers format. The docs have been updated with examples.
+                            </p>
+                            <div class="reply-actions">
+                                <div class="reply-action">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M14 9V5a3 3 0 0 0-3-3l-4 9v11h11.28a2 2 0 0 0 2-1.7l1.38-9a2 2 0 0 0-2-2.3H14z"></path>
+                                        <path d="M7 22V11L3 3"></path>
+                                    </svg>
+                                    <span>8</span>
+                                </div>
+                                <div class="reply-action">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M10 15v4a3 3 0 0 0 3 3l4-9V2H5.72a2 2 0 0 0-2 1.7l-1.38 9a2 2 0 0 0 2 2.3H10z"></path>
+                                        <path d="M17 2v7"></path>
+                                    </svg>
+                                    <span>2</span>
+                                </div>
+                                <div class="reply-action">Reply</div>
+                            </div>
+                        </div>
+                        
+                        <div class="reply-form">
+                            <div class="current-user-avatar">ME</div>
+                            <div class="reply-input-container">
+                                <textarea class="reply-input" placeholder="Write your reply..."></textarea>
+                                <button class="reply-submit">Reply</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="thread-card">
+                    <div class="thread-header">
+                        <div class="thread-author">
+                            <div class="author-avatar">EJ</div>
+                            <div class="author-info">
+                                <div class="author-name">Emily Johnson</div>
+                                <div class="thread-date">2 days ago</div>
+                            </div>
+                        </div>
+                        <div class="thread-category">Feature Requests</div>
+                    </div>
+                    
+                    <h3 class="thread-title">Dark mode for the dashboard</h3>
+                    <p class="thread-content">
+                        It would be great to have a dark mode option for the dashboard. I often work late at night and the bright interface can be harsh on the eyes.
+                    </p>
+                    
+                    <div class="thread-actions">
+                        <div class="thread-action">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+                            </svg>
+                            <span>42 Likes</span>
+                        </div>
+                        <div class="thread-action">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path>
+                            </svg>
+                            <span>8 Replies</span>
+                        </div>
+                        <div class="thread-action">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z"></path>
+                            </svg>
+                            <span>Share</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="pagination">
+                <button class="page-btn active">1</button>
+                <button class="page-btn">2</button>
+                <button class="page-btn">3</button>
+                <button class="page-btn">4</button>
+                <button class="page-btn">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="9 18 15 12 9 6"></polyline>
+                    </svg>
+                </button>
+            </div>
+        </main>
+    </div>
+    
+    <script>
+        // You could add JavaScript functionality here
+        document.addEventListener('DOMContentLoaded', function() {
+            // Example: Toggle filter buttons
+            const filterButtons = document.querySelectorAll('.filter-btn');
+            filterButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    filterButtons.forEach(btn => btn.classList.remove('active'));
+                    this.classList.add('active');
+                });
+            });
+            
+            // Example: Like functionality
+            const likeActions = document.querySelectorAll('.thread-action:first-child');
+            likeActions.forEach(action => {
+                action.addEventListener('click', function() {
+                    const likeCount = this.querySelector('span');
+                    let count = parseInt(likeCount.textContent);
+                    likeCount.textContent = (count + 1) + ' Likes';
+                });
+            });
+        });
+    </script>
+</body>
+</html>

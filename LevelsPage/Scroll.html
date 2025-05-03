@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smooth Scroll Sections</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <style>
+        /* Global styles */
+body, html {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    scroll-behavior: smooth;
+}
+
+/* Container to hold all sections */
+.container {
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    position: relative;
+}
+
+/* Sections with 125vh height */
+.section {
+    width: 100vw;
+    height: 125vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    font-size: 2rem;
+    background: #f0f0f0;
+    transition: opacity 0.8s ease-in-out;
+}
+
+/* Unique colors for each section */
+#section1 { background: #ffcccb; }
+#section2 { background: #add8e6; }
+#section3 { background: #90ee90; }
+#section4 { background: #ffd700; }
+#section5 { background: #ff69b4; }
+
+/* Button styling */
+button {
+    padding: 10px 20px;
+    font-size: 1.2rem;
+    margin-top: 20px;
+    cursor: pointer;
+    border: none;
+    background: #333;
+    color: white;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+
+button:hover {
+    background: #555;
+}
+
+    </style>
+    <div class="container">
+        <section class="section" id="section1">
+            <h1>Section 1</h1>
+            <button class="next-btn" data-target="section2">Continue</button>
+        </section>
+        <section class="section" id="section2">
+            <h1>Section 2</h1>
+            <button class="next-btn" data-target="section3">Continue</button>
+        </section>
+        <section class="section" id="section3">
+            <h1>Section 3</h1>
+            <button class="next-btn" data-target="section4">Continue</button>
+        </section>
+        <section class="section" id="section4">
+            <h1>Section 4</h1>
+            <button class="next-btn" data-target="section5">Continue</button>
+        </section>
+        <section class="section" id="section5">
+            <h1>Section 5</h1>
+            <p>Last Section</p>
+        </section>
+    </div>
+    <script>
+        document.addEventListener("keydown", (event) => {
+    if (event.key === "ArrowDown") {
+        let currentSection = document.querySelector(".section:target") || document.querySelector(".section");
+        let nextSection = currentSection.nextElementSibling;
+
+        if (nextSection) {
+            nextSection.scrollIntoView({ behavior: "smooth" });
+        }
+    }
+});
+
+    </script>
+</body>
+</html>
